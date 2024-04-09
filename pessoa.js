@@ -1,34 +1,12 @@
-let pessoas = [];
+// pessoa.js
 
-const adicionarPessoa = (pessoa) => {
-  pessoas.push(pessoa);
-};
+class Pessoa {
+  constructor(nome, idade, email, telefone) {
+    this.nome = nome;
+    this.idade = idade;
+    this.email = email;
+    this.telefone = telefone;
+  }
+}
 
-const getPessoas = () => {
-  return pessoas;
-};
-
-const getPessoaById = (id) => {
-  return pessoas.find(pessoa => pessoa.id === id);
-};
-
-const atualizarPessoa = (id, novaPessoa) => {
-  pessoas = pessoas.map(pessoa => {
-    if (pessoa.id === id) {
-      return { ...pessoa, ...novaPessoa };
-    }
-    return pessoa;
-  });
-};
-
-const removerPessoa = (id) => {
-  pessoas = pessoas.filter(pessoa => pessoa.id !== id);
-};
-
-module.exports = {
-  adicionarPessoa,
-  getPessoas,
-  getPessoaById,
-  atualizarPessoa,
-  removerPessoa
-};
+module.exports = Pessoa;
